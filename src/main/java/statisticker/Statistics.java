@@ -36,6 +36,5 @@ public class Statistics
         avg=avg/numbers.size();
         Statistics.Stats s=new Statistics.Stats(avg,min,max);
         return s;
-        //implement the computation of statistics here
     }
 }
