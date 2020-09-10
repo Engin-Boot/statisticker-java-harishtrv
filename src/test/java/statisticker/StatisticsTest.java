@@ -1,12 +1,13 @@
 package statisticker;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class StatisticsTest 
 {
@@ -28,9 +29,13 @@ public class StatisticsTest
     {
         List<Float> emptyList = new ArrayList<>();
         Statistics.Stats s = Statistics.getStatistics(emptyList);
-        assertTrue(s.average.isNaN());
-        assertTrue(s.min.isNaN());
-        assertTrue(s.max.isNaN());
+        Double avg = new Double(s.average);
+        Double min=new Double(s.min);
+        Double max=new Double(s.max);
+
+        assertTrue(avg.isNaN());
+        assertTrue(min.isNaN());
+        assertTrue(max.isNaN());
         //All fields of computedStats (average, max, min) must be
         //Float.NaN (not-a-number), as described in
         //https://www.geeksforgeeks.org/nan-not-number-java/
